@@ -1,115 +1,218 @@
+/* TaskList.css — улучшенный дизайн */
+
 .task-manager {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  min-height: 100vh;
 }
 
-h1 {
-  color: #2c3e50;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 10px;
-}
-
+/* --- Карточка формы --- */
 .create-form {
-  margin-bottom: 30px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  border: 1px solid #eef2f7;
 }
 
 .create-form h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a2b3c;
   margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: -0.3px;
 }
 
+/* --- Поля формы --- */
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1.5px solid #e1e8f0;
+  border-radius: 14px;
+  background: #fafcff;
+  transition: 0.2s;
   box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4f8cf7;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(79, 140, 247, 0.12);
 }
 
 .form-group textarea {
-  min-height: 60px;
+  min-height: 80px;
   resize: vertical;
 }
 
+/* --- Кнопки формы --- */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
 .btn-submit {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #1a2b3c;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 40px;
   cursor: pointer;
+  transition: 0.2s;
+  letter-spacing: 0.3px;
 }
 
 .btn-submit:hover {
-  background-color: #0069d9;
+  background: #2c3e56;
+  transform: scale(1.02);
 }
 
+/* --- Кнопка "Очистить" (теперь как у "Добавить") --- */
+.btn-clear {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  background: #eef2f7;
+  color: #3e4f61;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-clear:hover {
+  background: #dce3ec;
+  color: #1a2b3c;
+}
+
+/* --- Список задач --- */
 .tasks-section h3 {
-  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a2b3c;
+  margin-bottom: 20px;
 }
 
+/* --- Таблица (улучшенное разделение) --- */
 .task-table {
   width: 100%;
   border-collapse: collapse;
-}
-
-.task-table th,
-.task-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: left;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .task-table th {
-  background-color: #f5f5f5;
-  font-weight: bold;
+  text-align: left;
+  padding: 14px 16px;
+  color: #5a6f84;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: #f8faff;
+  border-bottom: 2px solid #e3eaf2;
 }
 
-.status-select {
-  padding: 5px;
+.task-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf2f9;
+  vertical-align: middle;
   font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  cursor: pointer;
+  color: #1a2b3c;
 }
 
-.status-new {
-  background-color: #f8f9fa;
+.task-table tr:last-child td {
+  border-bottom: none;
 }
 
-.status-progress {
-  background-color: #fff3cd;
+.task-table tr:hover td {
+  background-color: #fafcff;
 }
 
-.status-done {
-  background-color: #d4edda;
-}
-
-.btn-delete {
-  padding: 5px 10px;
-  background-color: #dc3545;
-  color: #fff;
+/* --- Статусы (цветные бейджи) --- */
+.status-select {
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  transition: 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+/* Новая */
+.status-new {
+  background-color: #dbeafe;   /* ← добавили фон */
+  color: #1e3a8a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a8a' d='M6 1L1 6l5 5 5-5-5-5z'/%3E%3C/svg%3E");
+}
+
+/* В процессе */
+.status-progress {
+  background-color: #fef3c7;
+  color: #92400e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2392400e' d='M6 1L1 6l5 5 5-5-5-5z'/%3E%3C/svg%3E");
+}
+
+/* Выполнена */
+.status-done {
+  background-color: #8bf890;
+  color: #065f46;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23065f46' d='M6 1L1 6l5 5 5-5-5-5z'/%3E%3C/svg%3E");
+}
+
+.status-select:focus {
+  outline: 2px solid rgba(79, 140, 247, 0.4);
+}
+
+/* --- Кнопка "Удалить" (без смайлика, с ховером) --- */
+.btn-delete {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  color: #6b7f94;
+  border: 1px solid #dce3ec;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+  letter-spacing: 0.2px;
 }
 
 .btn-delete:hover {
-  background-color: #c82333;
+  background: #fee8ea;
+  color: #d43f52;
+  border-color: #d43f52;
 }
 
-.error {
-  color: red;
+/* --- Действия в строке таблицы --- */
+.task-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }

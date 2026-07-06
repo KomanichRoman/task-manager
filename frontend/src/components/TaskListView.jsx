@@ -1,3 +1,4 @@
+// TaskListView.jsx — обновлённый (кнопки без смайликов)
 import './TaskList.css';
 
 function TaskListView({
@@ -17,6 +18,7 @@ function TaskListView({
   return (
     <div className="task-manager">
       <h1>Task Manager</h1>
+
       <div className="create-form">
         <h3>Создать новую задачу</h3>
         <form
@@ -42,26 +44,30 @@ function TaskListView({
               name="title"
               placeholder="Название задачи"
               required
+              minLength={2}
             />
           </div>
           <div className="form-group">
             <textarea
               name="description"
-              placeholder="Описание (необязательно)"
+              placeholder="Описание задачи (необязательно)"
+              maxLength={500}
             />
           </div>
-          <button type="submit" className="btn-submit">
-            Добавить задачу
-          </button>
+          <div className="form-actions">
+            <button type="submit" className="btn-submit">
+              Добавить задачу
+            </button>
+          </div>
         </form>
       </div>
 
-      {loading && <p>Загрузка...</p>}
+      {loading && <p>Загрузка задач...</p>}
       {error && <p className="error">{error}</p>}
 
       {!loading && !error && (
         <div className="tasks-section">
-          <h3>Все задачи ({tasks.length})</h3>
+          <h3>Список задач ({tasks.length})</h3>
           {tasks.length === 0 ? (
             <p>Задач пока нет. Создайте первую!</p>
           ) : (
@@ -72,6 +78,7 @@ function TaskListView({
                   <th>Название</th>
                   <th>Описание</th>
                   <th>Статус</th>
+                  <th>Дата создания</th>
                   <th>Действия</th>
                 </tr>
               </thead>
@@ -88,17 +95,24 @@ function TaskListView({
                         className={`status-select ${getStatusClass(task.status)}`}
                       >
                         <option value="new">🆕 Новая</option>
-                        <option value="in_progress">⏳ В работе</option>
+                        <option value="in_progress">⏳ В процессе</option>
                         <option value="done">✅ Выполнена</option>
                       </select>
                     </td>
                     <td>
-                      <button
-                        onClick={() => deleteTask(task.id)}
-                        className="btn-delete"
-                      >
-                        🗑️ Удалить
-                      </button>
+                      {task.created_at
+                        ? new Date(task.created_at).toLocaleString()
+                        : '—'}
+                    </td>
+                    <td>
+                      <div className="task-actions">
+                        <button
+                          className="btn-delete"
+                          onClick={() => deleteTask(task.id)}
+                        >
+                          Удалить
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
