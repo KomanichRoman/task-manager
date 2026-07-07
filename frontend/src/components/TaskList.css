@@ -1,5 +1,3 @@
-/* TaskList.css — улучшенный дизайн */
-
 .task-manager {
   max-width: 1100px;
   margin: 0 auto;
@@ -9,7 +7,6 @@
   min-height: 100vh;
 }
 
-/* --- Карточка формы --- */
 .create-form {
   background: #ffffff;
   padding: 30px 35px;
@@ -28,7 +25,6 @@
   letter-spacing: -0.3px;
 }
 
-/* --- Поля формы --- */
 .form-group {
   margin-bottom: 18px;
 }
@@ -59,7 +55,6 @@
   resize: vertical;
 }
 
-/* --- Кнопки формы --- */
 .form-actions {
   display: flex;
   gap: 12px;
@@ -84,7 +79,6 @@
   transform: scale(1.02);
 }
 
-/* --- Кнопка "Очистить" (теперь как у "Добавить") --- */
 .btn-clear {
   padding: 12px 28px;
   font-size: 15px;
@@ -102,7 +96,6 @@
   color: #1a2b3c;
 }
 
-/* --- Список задач --- */
 .tasks-section h3 {
   font-size: 22px;
   font-weight: 600;
@@ -110,7 +103,6 @@
   margin-bottom: 20px;
 }
 
-/* --- Таблица (улучшенное разделение) --- */
 .task-table {
   width: 100%;
   border-collapse: collapse;
@@ -148,7 +140,6 @@
   background-color: #fafcff;
 }
 
-/* --- Статусы (цветные бейджи) --- */
 .status-select {
   padding: 6px 14px;
   border-radius: 40px;
@@ -165,21 +156,18 @@
   padding-right: 32px;
 }
 
-/* Новая */
 .status-new {
-  background-color: #dbeafe;   /* ← добавили фон */
+  background-color: #dbeafe;
   color: #1e3a8a;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a8a' d='M6 1L1 6l5 5 5-5-5-5z'/%3E%3C/svg%3E");
 }
 
-/* В процессе */
 .status-progress {
   background-color: #fef3c7;
   color: #92400e;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2392400e' d='M6 1L1 6l5 5 5-5-5-5z'/%3E%3C/svg%3E");
 }
 
-/* Выполнена */
 .status-done {
   background-color: #8bf890;
   color: #065f46;
@@ -190,7 +178,6 @@
   outline: 2px solid rgba(79, 140, 247, 0.4);
 }
 
-/* --- Кнопка "Удалить" (без смайлика, с ховером) --- */
 .btn-delete {
   padding: 6px 16px;
   font-size: 13px;
@@ -210,7 +197,6 @@
   border-color: #d43f52;
 }
 
-/* --- Действия в строке таблицы --- */
 .task-actions {
   display: flex;
   gap: 6px;

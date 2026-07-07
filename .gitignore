@@ -1,10 +1,14 @@
 backend/node_modules/
 backend/.env
+frontend/node_modules/
+frontend/.env
 
 python/__pycache__/
-*.pyc
+python/*.pyc
+python/*.csv
+*.csv
+
+*.log
 
 .DS_Store
 Thumbs.db
-
-*.log

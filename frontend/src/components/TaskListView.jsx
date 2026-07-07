@@ -1,4 +1,3 @@
-// TaskListView.jsx — обновлённый (кнопки без смайликов)
 import './TaskList.css';
 
 function TaskListView({
