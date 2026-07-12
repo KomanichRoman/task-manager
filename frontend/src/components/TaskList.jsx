@@ -1,4 +1,3 @@
-// TaskList.jsx — ТОЛЬКО ЛОГИКА
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskListView from './TaskListView';

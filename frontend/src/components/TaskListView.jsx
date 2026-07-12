@@ -49,7 +49,7 @@ function TaskListView({
           <div className="form-group">
             <textarea
               name="description"
-              placeholder="Описание задачи (необязательно)"
+              placeholder="Описание задачи"
               maxLength={500}
             />
           </div>
